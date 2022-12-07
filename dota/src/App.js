@@ -17,8 +17,8 @@ function App() {
       axios.get(api).then((response) => {
         setData(response.data)
         console.log(response.data)
-        setPickHeroes(response.data.picks_bans)
-        console.log(response.data.picks_bans)
+        setPickHeroes(response.data.players)
+        console.log(response.data.players)
         setRadWin(response.data.radiant_win)
         console.log(response.data.radiant_win)
       })
@@ -49,63 +49,65 @@ function App() {
           placeholder="Enter match ID"
           type="text" />
       </div>
-      <div className="container">
-        <div className="top">
-          <div className='matchID'>
-            <p className='bold'>
-              {pickHeroes && `Match: ${data.match_id}` }
-            </p>
-          </div>
-          <div className='Radiant'>
-            <p className='teamRad'>
-              {pickHeroes && 'Radiant:'}
-            </p>
-            <ul>
-              {pickHeroes && pickHeroes.map(({ is_pick, hero_id, team }) => (
-                (is_pick === true && team === 0 ?
-                      <li className='teamRad' key={hero_id}>
-                        {HeroIDS.map(({ id, localized_name }) => (
-                          (hero_id == id ?
-                            <p>{localized_name}</p>
-                            : []
+      {data.match_id && 
+        <div className="container">
+          <div className="top">
+            <div className='matchID'>
+              <p className='bold'>
+                {pickHeroes && `Match: ${data.match_id}` }
+              </p>
+            </div>
+            <div className='Radiant'>
+              <p className='teamRad'>
+                {pickHeroes && 'Radiant:'}
+              </p>
+              <ul>
+                {pickHeroes && pickHeroes.map(({ hero_id, isRadiant }) => (
+                  (isRadiant === true ?
+                        <li className='teamRad' key={hero_id}>
+                          {HeroIDS.map(({ id, localized_name }) => (
+                            (hero_id == id ?
+                              <p>{localized_name}</p>
+                              : []
+                            )
                           )
-                        )
-                        )}
-                      </li>
-                      : []
-                )
-              ))
-              }
-            </ul>
-          </div>
-          <div className='Dire'>
-            <p className='teamDir'>
-              {pickHeroes && 'Dire:'}
-            </p>
-            <ul>
-              {pickHeroes && pickHeroes.map(({ is_pick, hero_id, team }) => (
-                (is_pick === true && team === 1 ?
-                  <li className='teamDir' key={hero_id}>
-                    {HeroIDS.map(({id, localized_name}) => (
-                      (hero_id == id ?
-                        <p>{localized_name}</p>
+                          )}
+                        </li>
                         : []
+                  )
+                ))
+                }
+              </ul>
+            </div>
+            <div className='Dire'>
+              <p className='teamDir'>
+                {pickHeroes && 'Dire:'}
+              </p>
+              <ul>
+                {pickHeroes && pickHeroes.map(({ hero_id, isRadiant }) => (
+                  (isRadiant === false ?
+                    <li className='teamDir' key={hero_id}>
+                      {HeroIDS.map(({id, localized_name}) => (
+                        (hero_id == id ?
+                          <p>{localized_name}</p>
+                          : []
+                        )
                       )
-                    )
-                    )}
-                  </li>
-                  : []
-                )
-              ))}
-            </ul>
+                      )}
+                    </li>
+                    : []
+                  )
+                ))}
+              </ul>
+            </div>
           </div>
-        </div>
-        <div className="bottom">
-          <div className='victory'>
+          <div className="middle">
+            <p className='RadScore'>{data.radiant_score}</p>
+            <p className='DirScore'>{data.dire_score}</p>
             {RadiantWins()}
           </div>
         </div>
-      </div>
+      }
     </div>
   )
 }

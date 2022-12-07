@@ -29,19 +29,45 @@ p {
 }
 
 .Dire {
-  align-content: right;
+  right: 20%;
+}
+
+.matchID {
+  margin-bottom: 1.5rem;
 }
 
 .teamRad {
-  margin: 1rem;
+  margin-right: 10rem;
+  padding-top: .5rem;
   font-size: 1.6rem;
-  text-align: left;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  margin-top: .3rem;
+  padding-top: .5rem;
 }
 
 .teamDir {
-  margin: 1rem;
+  margin-left: 30rem;
+  padding-top: .5rem;
   font-size: 1.6rem;
-  text-align: right;
+  text-align: center;
+}
+
+li {
+  margin-top: .2rem;
+}
+
+.top {
+  padding: 1rem 2rem;
+  padding-bottom: 3rem;
+  font-size: 1rem;
+  border-radius: 1.3rem;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: rgba(0, 0, 0, 0.5);
+  color: gray;
 }
 
 .radHeroes {
@@ -50,33 +76,89 @@ p {
 }
 
 .RadiantVictory {
+  margin-left: 11rem;
   font-size: 2rem;
   text-align: center;
   font-weight: 800;
-  color: rgba(40, 255, 40, 1);
+  color: rgba(180, 180, 180, 1);
 }
 
 .DireVictory {
+  margin: 0rem 11rem;
   font-size: 2rem;
   text-align: center;
   font-weight: 800;
-  color: rgba(255, 40, 40, 1);
+  color: rgba(180, 180, 180, 1);
+}
+
+
+.middle .DireVictory {
+  padding: 1rem 2rem;
+  align-self: center;
+  font-size: 1.7rem;
+  border-radius: 1.3rem;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  background: rgba(160, 0, 0, 0.7);
+}
+
+.middle .RadiantVictory {
+  padding: 1rem 2rem;
+  align-self: center;
+  font-size: 1.7rem;
+  border-radius: 1.3rem;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  background: rgba(0, 160, 0, 0.7);
 }
 
 .bottom {
-  margin-top: 10%;
-  
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  padding-bottom: 3rem;
+  border-radius: 1.3rem;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: rgba(0, 0, 0, 0.5);
+  color: gray;
 }
 
 .bold {
   font-weight: 600;
 }
 
+.RadScore {
+  top: 23.75rem;
+  position: absolute;
+  left: 3rem;
+  margin-left: 1rem;
+  margin-top: .5rem;
+  padding: 0rem .8rem;
+  text-align: left;
+  font-size: 4rem;
+  color: rgba(0, 160, 0, 1);
+  border-radius: .6rem;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.DirScore {
+  top: 23.75rem;
+  position: absolute;
+  right: 3rem;
+  margin-right: 1rem;
+  margin-top: .5rem;
+  padding: 0rem .8rem;
+  text-align: right;
+  font-size: 4rem;
+  color: rgba(160, 0, 0, 1);
+  border-radius: .6rem;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  background: rgba(0, 0, 0, 0.7);
+}
+
 .App {
   width: 100%;
   height: 100vh;
   position: relative;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.2);
   color: #202020;
 }
 
@@ -121,5 +203,102 @@ p {
   border: 1px solid rgba(255, 255, 255, 0.8);
   background: rgba(255, 255, 255, 0.1);
   color: white;
+
+}
+
+@media (max-width: 640px) {
+  .teamRad {
+    margin-right: 1rem;
+    padding-top: .5rem;
+    padding-right: 5rem;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .teamDir {
+    margin-left: 1rem;
+    padding-top: .5rem;
+    padding-left: 11rem;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  p {
+    font-size: .8rem;
+    color: white;
+  }
+
+  .RadiantVictory {
+    margin-left: 7rem;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    color: rgba(180, 180, 180, 1);
+  }
+  
+  .DireVictory {
+    margin: 0rem 7rem;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    color: rgba(180, 180, 180, 1);
+  }
+    
+  .middle .DireVictory {
+    padding: 1rem 2rem;
+    align-self: center;
+    font-size: 1rem;
+    border-radius: 1.3rem;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    background: rgba(160, 0, 0, 0.7);
+  }
+  
+  .middle .RadiantVictory {
+    padding: 1rem 2rem;
+    align-self: center;
+    font-size: 1rem;
+    border-radius: 1.3rem;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    background: rgba(0, 160, 0, 0.7);
+  }
+
+  .RadScore {
+    top: 19.6rem;
+    height: 4.5rem;
+    position: absolute;
+    left: 1.5rem;
+    margin-left: 1rem;
+    text-align: left;
+    font-size: 3rem;
+    color: rgba(0, 160, 0, 1);
+    padding: 0rem .4rem;
+    border-radius: .6rem;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    background: rgba(0, 0, 0, 0.7);
+  }
+  
+  .DirScore {
+    top: 19.6rem;
+    height: 4.5rem;
+    position: absolute;
+    right: 1.5rem;
+    margin-right: 1rem;  
+    text-align: right;
+    font-size: 3rem;
+    color: rgba(160, 0, 0, 1);
+    padding: 0rem .4rem;
+    border-radius: .6rem;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .Radiant{
+    width: 50%;
+    position: absolute;
+  }
+  
+  .Dire {
+    right: 20%;
+  }
 
 }
